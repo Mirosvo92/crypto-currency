@@ -1,0 +1,9 @@
+.currency-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  &__button {
+    margin: 0 25px;
+  }
+}

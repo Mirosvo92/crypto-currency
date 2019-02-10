@@ -1,0 +1,11 @@
+<app-crypto-currency-list *ngIf="currencies"
+                          [currencies]="currencies"
+                          (addNewCurrency)="addNewCurrency($event)"
+                          (deleteCurrency)="deleteCurrency($event)"
+                          [defaultCurrData]="defaultCurrData" >
+</app-crypto-currency-list>
+<app-crypto-currency-chart-table *ngIf="dataChart.length === defaultCurrData.length"
+                                 [isUpdate]="isUpdate"
+                                 [defaultCurr]="defaultCurr"
+                                 [dataChart]="dataChart">
+</app-crypto-currency-chart-table>

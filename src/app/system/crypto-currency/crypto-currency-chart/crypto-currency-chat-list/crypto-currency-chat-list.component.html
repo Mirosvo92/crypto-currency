@@ -1,0 +1,17 @@
+<div class="currency-list">
+  <div class="currency-list__item">
+    <select #addSelect class="select">
+      <option *ngFor="let currency of currencies" [value]="currency.id">{{ currency.name }}</option>
+    </select>
+    <button (click)="addCurrency(addSelect.value)" appDisabledButton class="button currency-list__button">add</button>
+  </div>
+  <div class="currency-list__item">
+    <button (click)="delCurrency(delSelect.value)"
+            [disabled]="defaultCurrData.length === 1"
+            class="button currency-list__button">delete
+    </button>
+    <select #delSelect class="select">
+      <option *ngFor="let currency of defaultCurrData"  [value]="currency.id">{{ currency.name }}</option>
+    </select>
+  </div>
+</div>
