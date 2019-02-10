@@ -21,7 +21,7 @@ export class CryptoCurrencyChartTableComponent implements OnInit, OnChanges {
     options: {
       legend: {position: 'top'},
       title: 'currency - USD',
-      chartArea: {width: '90%'},
+      chartArea: {width: '85%'},
       height: 900,
     }
   };
@@ -40,14 +40,11 @@ export class CryptoCurrencyChartTableComponent implements OnInit, OnChanges {
   }
 
   private setDataTableByDate() {
-    this.cloneDataChart = JSON.parse(JSON.stringify(this.dataChart));
-
     this.cloneDataChart.forEach( (el, dataChartIndex) => {
       el.data.history.forEach( (data, historyIndex) => {
         if (dataChartIndex === 0) {
-          const time = moment(data.timestamp).format('DD.MM.YYYY:HH:MM:SS');
-          data.timestamp = time;
-          this.dataTable.push([time, Number(data.price)]);
+          data.timestamp = moment(data.timestamp).format('DD.MM.YYYY:HH:MM:SS');
+          this.dataTable.push([data.timestamp, Number(data.price)]);
         } else {
           if (this.dataTable[historyIndex + 1]) {
             this.dataTable[historyIndex + 1].push(Number(data.price));
@@ -58,8 +55,6 @@ export class CryptoCurrencyChartTableComponent implements OnInit, OnChanges {
   }
 
   private setDataTableByValue() {
-    this.cloneDataChart = JSON.parse(JSON.stringify(this.dataChart));
-
     this.cloneDataChart.forEach( (el, dataChartIndex) => {
       el.data.history.sort((a, b) => Number(a.price) - Number(b.price))
         .forEach( (data, historyIndex) => {
@@ -80,6 +75,7 @@ export class CryptoCurrencyChartTableComponent implements OnInit, OnChanges {
   filterDataTable(data: {value: string}) {
     this.dataTable = [['title']];
     this.dataTable[0].push(...this.defaultCurr);
+    this.cloneDataChart = JSON.parse(JSON.stringify(this.dataChart));
     switch (data.value) {
       case 'byValue':
         this.setDataTableByValue();

@@ -1,5 +1,5 @@
 <div class="filter">
-  <select (change)="changeSort($event.target.value)" class="select">
+  <select (change)="changeSort($event.target.value)" [value]="activeFilter" class="select">
     <option *ngFor="let filter of dataFilter" [value]="filter.value" >{{ filter.text }}</option>
   </select>
 </div>

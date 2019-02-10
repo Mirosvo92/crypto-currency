@@ -1,5 +1,5 @@
 <div class="chart-table">
-  <app-crypto-currency-chart-table-filter (filter)="filterDataTable($event)" ></app-crypto-currency-chart-table-filter>
+  <app-crypto-currency-chart-table-filter (setFilter)="filterDataTable($event)" [activeFilter]="filter" ></app-crypto-currency-chart-table-filter>
   <app-crypto-currency-chart-table-save [dataTable]="dataTable"></app-crypto-currency-chart-table-save>
 </div>
 <div>

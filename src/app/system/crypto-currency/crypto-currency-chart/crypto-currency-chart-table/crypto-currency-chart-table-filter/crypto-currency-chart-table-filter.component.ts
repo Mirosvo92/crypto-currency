@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-crypto-currency-chart-table-filter',
@@ -6,20 +6,26 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./crypto-currency-chart-table-filter.component.scss']
 })
 
-export class CryptoCurrencyChartTableFilterComponent implements OnInit {
-  @Output() filter = new EventEmitter<{value: string}>();
+export class CryptoCurrencyChartTableFilterComponent implements OnInit, OnChanges {
+  @Output() setFilter = new EventEmitter<{value: string}>();
+  @Input() activeFilter: string;
   dataFilter = [
-    {text: 'sort by date', value: 'byDate'},
-    {text: 'sort by value', value: 'byValue'},
+    {text: 'Sort by date', value: 'byDate'},
+    {text: 'Sort by value', value: 'byValue'},
   ];
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.activeFilter) {
+      this.activeFilter = changes.activeFilter.currentValue;
+    }
   }
 
   changeSort(value: string) {
-    this.filter.emit({value: value});
+    this.setFilter.emit({value: value});
   }
 
 }
