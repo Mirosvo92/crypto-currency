@@ -13,7 +13,7 @@ import {CryptoCurrencyChartComponent } from './crypto-currency/crypto-currency-c
 import {CryptoCurrencyChartTableComponent} from './crypto-currency/crypto-currency-chart/crypto-currency-chart-table/crypto-currency-chart-table.component';
 import {CryptoCurrencyChartTableFilterComponent} from './crypto-currency/crypto-currency-chart/crypto-currency-chart-table/crypto-currency-chart-table-filter/crypto-currency-chart-table-filter.component';
 import {DisabledButtonDirective} from './shared/directives/disabled-button.directive';
-import { CryptoCurrencyChartTableSaveComponent } from './crypto-currency/crypto-currency-chart/crypto-currency-chart-table/crypto-currency-chart-table-save/crypto-currency-chart-table-save.component';
+import {CryptoCurrencyChartTableSaveComponent} from './crypto-currency/crypto-currency-chart/crypto-currency-chart-table/crypto-currency-chart-table-save/crypto-currency-chart-table-save.component';
 
 
 @NgModule({
