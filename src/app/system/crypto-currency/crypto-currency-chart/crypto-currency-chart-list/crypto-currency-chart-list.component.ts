@@ -6,10 +6,10 @@ import {DefaultCurrDataInterface} from '../../../shared/interfaces/data-chart.in
 
 @Component({
   selector: 'app-crypto-currency-list',
-  templateUrl: './crypto-currency-chat-list.component.html',
-  styleUrls: ['./crypto-currency-chat-list.component.scss']
+  templateUrl: './crypto-currency-chart-list.component.html',
+  styleUrls: ['./crypto-currency-chart-list.component.scss']
 })
-export class CryptoCurrencyChatListComponent implements OnInit {
+export class CryptoCurrencyChartListComponent implements OnInit {
   @Input() currencies: {name: string, id: number}[];
   @Input() defaultCurrData: DefaultCurrDataInterface[];
   @Output() addNewCurrency = new EventEmitter<{name: string, id: number}>();

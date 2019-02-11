@@ -22,7 +22,7 @@ export class CryptoCurrencyChartTableSaveComponent implements OnInit, OnChanges 
     saveAs(new Blob([this.setDataForDownload()], { type: 'text/csv' }), 'data.csv');
   }
 
-  private setDataForDownload() {
+  private setDataForDownload(): string {
     let csvContent = '';
     this.dataTable.forEach((data, index) => {
       const dataString = data.join(';');

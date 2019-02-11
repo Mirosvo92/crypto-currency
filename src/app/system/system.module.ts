@@ -5,7 +5,7 @@ import {Ng2GoogleChartsModule} from 'ng2-google-charts';
 
 import {SystemRoutingModule} from './system-routing.module';
 import {SystemComponent} from './system.component';
-import {CryptoCurrencyChatListComponent} from './crypto-currency/crypto-currency-chart/crypto-currency-chat-list/crypto-currency-chat-list.component';
+import {CryptoCurrencyChartListComponent} from './crypto-currency/crypto-currency-chart/crypto-currency-chart-list/crypto-currency-chart-list.component';
 import {CryptoCurrencyComponent} from './crypto-currency/crypto-currency.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CryptoCurrencyService} from './shared/services/crypto-currensy.service';
@@ -26,7 +26,7 @@ import { CryptoCurrencyChartTableSaveComponent } from './crypto-currency/crypto-
   declarations: [
     SystemComponent,
     CryptoCurrencyComponent,
-    CryptoCurrencyChatListComponent,
+    CryptoCurrencyChartListComponent,
     CryptoCurrencyChartComponent,
     CryptoCurrencyChartTableComponent,
     CryptoCurrencyChartTableFilterComponent,
